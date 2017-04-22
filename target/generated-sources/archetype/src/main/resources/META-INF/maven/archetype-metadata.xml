@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="archetype-webapp"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <fileSets>
+	<fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/main/java/com/tzg/webapp</directory>
+      <includes>
+		<include>**/*.java</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/webapp</directory>
+      <includes>
+        <include>**/*.html</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/webapp/WEB-INF</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+	<fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/main/resources/mybatis</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+	<fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/resources/properties</directory>
+      <includes>
+        <include>**/*.properties</include>
+      </includes>
+    </fileSet>
+	<fileSet filtered="true" encoding="UTF-8">
+      <directory>src/main/resources/jetty</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" packaged="true" encoding="UTF-8">
+      <directory>src/main/resources/mysql</directory>
+      <includes>
+        <include>**/*.sql</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>src/main/webapp/dist</directory>
+    </fileSet>
+	<fileSet encoding="UTF-8">
+      <directory>src/main/webapp/src</directory>
+    </fileSet>
+	<fileSet encoding="UTF-8">
+      <directory>src/main/webapp/src/css</directory>
+    </fileSet>
+	<fileSet encoding="UTF-8" packaged="true">
+      <directory>src/main/webapp/src/css</directory>
+    </fileSet>
+		<fileSet encoding="UTF-8">
+      <directory>src/main/webapp/src/img</directory>
+    </fileSet>
+	<fileSet encoding="UTF-8" packaged="true">
+      <directory>src/main/webapp/src/img</directory>
+    </fileSet>
+	<fileSet encoding="UTF-8">
+      <directory>src/main/webapp/src/js</directory>
+    </fileSet>
+	<fileSet encoding="UTF-8" packaged="true">
+      <directory>src/main/webapp/src/js</directory>
+    </fileSet>
+  </fileSets>
+</archetype-descriptor>
