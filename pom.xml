@@ -22,14 +22,14 @@
     <!-- ====================================================== -->
     <!--                         POM GAV                        -->
     <!-- ====================================================== -->
-    <artifactId>archetype-webapp</artifactId>
+    <artifactId>archetype-web</artifactId>
 
     <!-- ====================================================== -->
     <!--                       项目名和组织                      -->
     <!-- ====================================================== -->
     <url>http://www.tzg.cn</url>
     <name>${project.artifactId}</name>
-    <description>======== archetype-webapp ========</description>
+    <description>======== archetype-web ========</description>
 
     <!-- ====================================================== -->
     <!--                        开发者介绍                       -->
@@ -41,4 +41,9 @@
             <organization>杭州铜米金融服务有限公司</organization>
         </developer>
     </developers>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
 </project>

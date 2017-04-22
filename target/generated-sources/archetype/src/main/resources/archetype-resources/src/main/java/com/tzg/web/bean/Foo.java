@@ -6,21 +6,21 @@ import java.io.Serializable;
 
 public class Foo extends ProtoBean implements Serializable {
 
-    private long id;
+    private Integer id;
 
     private String name;
 
-    public long getId() { return id; }
+    public Integer getId() { return id; }
 
-    public void setId(long id) { this.id = id; }
+    public void setId( Integer id ) { this.id = id; }
 
     public String getName() { return name; }
 
-    public void setName(String name) {this.name = name; }
-	
-	@Override
+    public void setName( String name ) {this.name = name; }
+
+    @Override
     public String toString() {
-        return "Foo{" + "id=" + id + ", name='" + name + '\'' + '}';
+        return "Foo{" + " id=" + id + ", name=" + name + " }";
     }
 
 }
