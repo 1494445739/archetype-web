@@ -1,4 +1,4 @@
-package com.tzg.webapp.${package}.bean;
+package com.tzg.web.${package}.bean;
 
 import com.tzg.service.support.proto.ProtoBean;
 
