@@ -1,0 +1,64 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzg.web.${package}.mapper.FooMapper">
+
+    <resultMap id="result" type="com.tzg.web.${package}.bean.Foo">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+    </resultMap>
+
+    <select id="selectById" parameterType="Integer" resultMap="result">
+        SELECT * FROM foo WHERE id = ${symbol_pound}{id}
+    </select>
+
+    <select id="selectCount" parameterType="Map" resultType="Integer">
+        SELECT count(*) FROM foo
+
+        <where>
+            <if test="id != null and id != ''">id = ${symbol_pound}{id}</if>
+            <if test="name != null and name != ''">and name = ${symbol_pound}{name}</if>
+        </where>
+    </select>
+
+    <select id="selectList" parameterType="Map" resultMap="result">
+        SELECT * FROM foo
+
+        <where>
+            <if test="id != null and id != ''">id = ${symbol_pound}{id}</if>
+            <if test="name != null and name != ''">AND name = ${symbol_pound}{name}</if>
+        </where>
+
+        ORDER BY id DESC
+
+        <if test="size != null or skip != null">
+            LIMIT ${symbol_pound}{skip}, ${symbol_pound}{size}
+        </if>
+    </select>
+
+    <update id="update" parameterType="com.tzg.web.${package}.bean.Foo">
+        UPDATE foo
+
+        <set>
+            <if test="id != null">
+                id = ${symbol_pound}{id},
+            </if>
+            <if test="name != null">
+                name = ${symbol_pound}{name}
+            </if>
+        </set>
+
+        WHERE id = ${symbol_pound}{id}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM foo WHERE id = ${symbol_pound}{id}
+    </delete>
+
+    <insert id="insert" parameterType="com.tzg.web.${package}.bean.Foo">
+        INSERT INTO foo (name) VALUES (${symbol_pound}{name})
+    </insert>
+
+</mapper>

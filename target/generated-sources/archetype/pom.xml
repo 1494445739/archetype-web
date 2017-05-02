@@ -5,7 +5,7 @@
 
     <groupId>com.tzg</groupId>
     <artifactId>archetype-web</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>maven-archetype</packaging>
 
     <name>archetype-web</name>
@@ -47,5 +47,18 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>dev-release</id>
+            <name>dev-nexus-release</name>
+            <url>http://dev.maven.com:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>dev-nexus-snapshots</id>
+            <name>dev-nexus-snapshot</name>
+            <url>http://dev.maven.com:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
