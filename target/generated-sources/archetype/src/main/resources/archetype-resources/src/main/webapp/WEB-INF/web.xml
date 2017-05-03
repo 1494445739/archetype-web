@@ -66,12 +66,6 @@
         <url-pattern>/druid/*</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>bootstrap</servlet-name>
-        <servlet-class>${groupId}.framework.support.intel.bootstrap.Bootstrap</servlet-class>
-        <load-on-startup>2</load-on-startup>
-    </servlet>
-
     <welcome-file-list>
         <welcome-file>WEB-INF/views/auth/login.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
