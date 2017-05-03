@@ -5,3 +5,7 @@
 新增:
 
 1) 多环境切换支持（利用maven profile）
+
+删除：
+
+1）web.xml文件中的bootstrap servlet。将其变成单独的浏览器启动组件（component-browser-starter）
