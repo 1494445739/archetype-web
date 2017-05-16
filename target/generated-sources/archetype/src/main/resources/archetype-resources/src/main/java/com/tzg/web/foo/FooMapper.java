@@ -1,4 +1,4 @@
-package com.tzg.web.${package};
+package com.tzg.web.${package}.foo;
 
 import com.tzg.service.support.proto.ProtoMapper;
 
