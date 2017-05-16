@@ -3,9 +3,9 @@
 #set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.tzg.web.${package}.mapper.FooMapper">
+<mapper namespace="com.tzg.web.${package}.FooMapper">
 
-    <resultMap id="result" type="com.tzg.web.${package}.bean.Foo">
+    <resultMap id="result" type="com.tzg.web.${package}.Foo">
         <id column="id" property="id"/>
         <result column="name" property="name"/>
     </resultMap>
@@ -38,7 +38,7 @@
         </if>
     </select>
 
-    <update id="update" parameterType="com.tzg.web.${package}.bean.Foo">
+    <update id="update" parameterType="com.tzg.web.${package}.Foo">
         UPDATE foo
 
         <set>
@@ -57,7 +57,7 @@
         DELETE FROM foo WHERE id = ${symbol_pound}{id}
     </delete>
 
-    <insert id="insert" parameterType="com.tzg.web.${package}.bean.Foo">
+    <insert id="insert" parameterType="com.tzg.web.${package}.Foo">
         INSERT INTO foo (name) VALUES (${symbol_pound}{name})
     </insert>
 
