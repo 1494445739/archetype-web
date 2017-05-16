@@ -9,3 +9,7 @@
 删除：
 
 1）web.xml文件中的bootstrap servlet。将其变成单独的浏览器启动组件（component-browser-starter）
+
+2017/05/16
+
+修改java目录结构。 去掉bean, controller, mapper, service等分类
