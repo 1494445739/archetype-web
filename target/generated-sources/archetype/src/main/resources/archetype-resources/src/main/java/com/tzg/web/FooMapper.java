@@ -1,8 +1,6 @@
-package com.tzg.web.${package}.mapper;
+package com.tzg.web.${package};
 
 import com.tzg.service.support.proto.ProtoMapper;
-
-import com.tzg.web.${package}.bean.Foo;
 
 import org.springframework.stereotype.Repository;
 
