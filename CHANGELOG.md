@@ -14,3 +14,5 @@
 
 + 升级为V1.0.2。配合zookeeper组件引入带来的一系列组件升级
   修改module代码生成结构。使其符合业务为主的目录结构
+  
++ 修改java目录结构。 去掉bean, controller, mapper, service等分类
