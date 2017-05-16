@@ -18,12 +18,12 @@ import javax.annotation.Resource;
 @RequestMapping("/${package}")
 public class FooController extends ProtoController< Foo > { 
 	
-		private static final Logger logger = LoggerFactory.getLogger( FooController.class );
+    private static final Logger logger = LoggerFactory.getLogger( FooController.class );
 	
-		@Resource
+    @Resource
     private FooService fooService;
 	
-		@Override
+    @Override
     protected ProtoService getService() {
         return fooService;
     }
