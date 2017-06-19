@@ -62,10 +62,10 @@
                 <include>**/*.html</include>
             </includes>
         </fileSet>   
-        <fileSet filtered="true" encoding="UTF-8">
+        <fileSet>
             <directory>src/main/webapp/src/assets</directory>
         </fileSet>       
-        <fileSet filtered="true" encoding="UTF-8">
+        <fileSet>
             <directory>src/main/webapp/src/assets/image</directory>
             <includes>
             	<include>**/*.png</include>

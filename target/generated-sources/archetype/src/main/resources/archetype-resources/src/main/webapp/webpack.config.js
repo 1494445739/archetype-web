@@ -10,11 +10,15 @@ const webpackMerge = require('webpack-merge')
 const ROOTPATH = path.resolve(__dirname)
 const ENV = (process.env.NODE_ENV || 'prod').trim()
 
-const projectTitle = '${artifactId}'
+const projectTitle = 'Web Auth'
 
 const getCommonConfig = (dllName) => {
   const extractCSS = new ExtractTextPlugin('[name].[hash].css')
+  const extractLoginCSS = new ExtractTextPlugin('login.css')
   return commonConfig = {
+    entry: {
+      'login': './src/assets/style/login.css'
+    },
     resolve: {
       modules: [
         'node_modules',
@@ -45,12 +49,18 @@ const getCommonConfig = (dllName) => {
         {
           test: /\.css$/,
           loader: extractCSS.extract({ fallback: 'style-loader', use: 'css-loader' }),
-          include: [path.join(ROOTPATH, 'src', 'assets'), path.join(ROOTPATH, 'node_modules')]
+          include: [path.join(ROOTPATH, 'src', 'assets'), path.join(ROOTPATH, 'node_modules')],
+          exclude: [path.join(ROOTPATH, 'src', 'assets', 'style', 'login.css')]
         },
         {
           test: /\.less$/,
           loader: extractCSS.extract({ fallback: 'style-loader', use: ['css-loader', 'less-loader'] }),
           include: [path.join(ROOTPATH, 'src', 'assets'), path.join(ROOTPATH, 'node_modules')]
+        },
+        {
+          test: /\.css$/,
+          loader: extractLoginCSS.extract({ fallback: 'style-loader', use: 'css-loader' }),
+          include: [path.join(ROOTPATH, 'src', 'assets', 'style', 'login.css')]
         },
         {
           test: /\.html$/,
@@ -67,11 +77,13 @@ const getCommonConfig = (dllName) => {
       ),
       new webpack.NoEmitOnErrorsPlugin(),
       extractCSS,
+      extractLoginCSS,
       new HtmlWebpackPlugin({
         inject: true,
         title: projectTitle + ' ' + (ENV == 'dev' ? ' Development Mode' : ''),
         filename: path.join(ROOTPATH, 'index.jsp'),
         template: path.join(ROOTPATH, 'src', 'index.html'),
+        chunks: ['main', 'vendor', 'commons'],
         env: ENV,
         dllName: dllName
       })
