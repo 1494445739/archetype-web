@@ -14,7 +14,8 @@
         <fileSet filtered="true" encoding="UTF-8">
             <directory>src/main/webapp</directory>
             <includes>
-                <include>**/*.html</include>
+                <include>**/*.json</include>
+                <include>**/*.js</include>
             </includes>
         </fileSet>
         <fileSet filtered="true" encoding="UTF-8">
@@ -47,29 +48,19 @@
                 <include>**/*.sql</include>
             </includes>
         </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>src/main/webapp/dist</directory>
-        </fileSet>
-        <fileSet encoding="UTF-8">
+        <fileSet filtered="true" encoding="UTF-8">
             <directory>src/main/webapp/src</directory>
+            <includes>
+                <include>**/*.ts</include>
+                <include>**/*.html</include>
+            </includes>
         </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>src/main/webapp/src/css</directory>
-        </fileSet>
-        <fileSet encoding="UTF-8" packaged="true">
-            <directory>src/main/webapp/src/css</directory>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>src/main/webapp/src/img</directory>
-        </fileSet>
-        <fileSet encoding="UTF-8" packaged="true">
-            <directory>src/main/webapp/src/img</directory>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory>src/main/webapp/src/js</directory>
-        </fileSet>
-        <fileSet encoding="UTF-8" packaged="true">
-            <directory>src/main/webapp/src/js</directory>
-        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/webapp/src/app</directory>
+            <includes>
+                <include>**/*.ts</include>
+                <include>**/*.html</include>
+            </includes>
+        </fileSet>        
     </fileSets>
 </archetype-descriptor>
