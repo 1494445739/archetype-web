@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '@tzg/web-shared';
+import { AuthModule } from '@tzg/web-auth';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
-import { AuthModule  } from '@tzg/web-auth';
+import { AppService } from './app.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { AuthModule  } from '@tzg/web-auth';
     AppRoutes
   ],
   declarations: [AppComponent],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

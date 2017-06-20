@@ -1,25 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService, MenuItem } from './app.service';
+import { Alert } from '@tzg/web-shared';
 
 declare var BASEPATH: string;
-declare var MENUDATA: Array<any>;
 
 @Component({
   selector: 'app-entry',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  username = 'aaaa';
+  username = '';
   menudata: any[];
 
-  constructor() { }
+  constructor(private service: AppService) { }
   ngOnInit() {
-    this.menudata = this.convertMenudata();
+    this.service.list({}).subscribe(result => {
+      if (result.status === 'ok') {
+        this.menudata = this.convertMenudata(result.data as MenuItem[]);
+      } else {
+        Alert(result.data as string);
+      }
+    }, err => {
+      Alert(err);
+    });
   }
 
-  convertMenudata () {
+  convertMenudata (menudata: MenuItem[]) {
     const menuMap = new Map<number, any>();
     const roots = [];
-    const menus = MENUDATA.filter(m => m.category !== 'a')
+    const menus = menudata.filter(m => m.category !== 'a')
     .sort((a, b) => { return a.seq - b.seq; })
     .map(m => {
       const menuitem = {
