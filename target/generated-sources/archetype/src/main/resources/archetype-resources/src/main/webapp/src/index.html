@@ -1,4 +1,6 @@
 <%= '\<%@page language="java" pageEncoding="utf-8" %\>' %>
+<%= '\<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %\>' %>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +11,7 @@
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <% if (htmlWebpackPlugin.options.env === 'dev') { %>
-    <base href="/auth/index">
+    <base href="/auth/authz">
     <link href="/dist/dll/<%= htmlWebpackPlugin.options.dllName %>.dll.css" rel="stylesheet">
     <script type="text/javascript" src="/dist/dll/<%= htmlWebpackPlugin.options.dllName %>.dll.js"></script>
     <script type="text/javascript">
@@ -17,7 +19,7 @@
       var BASEPATH = 'http://localhost:8080/';
     </script>
   <% } else { %>
-    <base href="/auth/index">
+    <base href="/auth/authz">
     <script type="text/javascript">
       var ENV = 'prod';
       var BASEPATH = '/';
@@ -28,6 +30,16 @@
 <body>
   <app-entry>Loading...</app-entry>
   <script type="text/javascript">
+    const MENUDATA=[
+    <%= '\<c:forEach items="\${resourceList}" var="item"\>' %>
+      { id: <%= "\${item.id}" %>, 
+        pid: <%= "\${item.pid}" %>, 
+        name: '<%= "\${item.name}" %>', 
+        category: '<%= "\${item.category}" %>', 
+        uri: '<%= "\${item.uri}" %>',
+        seq: '<%= "\${item.seq}" %>' },
+    <%= '\</c:forEach\>' %>
+    ];
   </script>
 </body>
 
