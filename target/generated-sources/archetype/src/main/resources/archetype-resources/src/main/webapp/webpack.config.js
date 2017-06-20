@@ -10,7 +10,7 @@ const webpackMerge = require('webpack-merge')
 const ROOTPATH = path.resolve(__dirname)
 const ENV = (process.env.NODE_ENV || 'prod').trim()
 
-const projectTitle = 'Web Auth'
+const projectTitle = '${artifactId}'
 
 const getCommonConfig = (dllName) => {
   const extractCSS = new ExtractTextPlugin('[name].[hash].css')
