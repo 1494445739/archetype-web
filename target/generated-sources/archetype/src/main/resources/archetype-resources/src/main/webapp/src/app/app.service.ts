@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { BaseService, Result } from '@tzg/web-shared';
+import { BaseService, Result } from '@tzg/ng-shared';
 
 export interface MenuItem {
   id: number;
