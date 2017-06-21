@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService, MenuItem } from './app.service';
-import { Alert } from '@tzg/web-shared';
+import { Alert } from '@tzg/ng-shared';
 
 declare var BASEPATH: string;
 
